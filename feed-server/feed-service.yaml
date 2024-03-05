@@ -6,6 +6,6 @@ metadata:
 spec:
   selector:
     app: feed-server
-    ports:
-      - protocol: TCP
-        port: 8080
+  ports:
+    - protocol: TCP
+      port: 8080

@@ -9,7 +9,7 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	sourceCompatibility = '21'
+	sourceCompatibility = '17'
 }
 
 repositories {
@@ -29,11 +29,11 @@ tasks.named('test') {
 
 jib {
 	from {
-		image = "openjdk:21"
+		image = "openjdk:17"
 	}
 	to {
-		image = "058264287757.dkr.ecr.ap-northeast-2.amazonaws.com/feed-server"
-		tags = ['latest', '0.0.1']
+		image = "0892668/sns-feedserver"
+		tags = ['latest', '0.0.3']
 	}
 	container {
 		creationTime = "USE_CURRENT_TIMESTAMP"
