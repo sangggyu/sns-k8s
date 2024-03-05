@@ -31,13 +31,13 @@ tasks.named('test') {
 
 jib {
 	from {
-		image = 'openjdk:17'
+		image = "openjdk:17"
 	}
 	to {
-		image = '0892668/sns-userserver'
-		tags = ['0.0.1']
+		image = "0892668/sns-userserver"
+		tags = ['latest', '0.0.1']
 	}
 	container {
-		creationTime = 'USE_CURRENT_TIMESTAMP'
+		creationTime = "USE_CURRENT_TIMESTAMP"
 	}
 }
