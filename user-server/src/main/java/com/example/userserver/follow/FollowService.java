@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class FollowService {
 
-    private FollowRepository followRepository;
+    private final FollowRepository followRepository;
 
     public FollowService(FollowRepository followRepository) {
         this.followRepository = followRepository;
@@ -43,7 +43,7 @@ public class FollowService {
     }
 
     public List<UserInfo> listFollowing(int userId) {
-        return followRepository.findFollowersByUserId(userId);
+        return followRepository.findFollowingByUserId(userId);
     }
 
 }

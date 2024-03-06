@@ -9,7 +9,7 @@ import java.util.List;
 @RequestMapping("/api/follows")
 public class FollowController {
 
-    private FollowService followService;
+    private final FollowService followService;
 
     public FollowController(FollowService followService) {
         this.followService = followService;
@@ -19,7 +19,7 @@ public class FollowController {
     public List<UserInfo> listFollowers(@PathVariable("userId") int userId) {
         return followService.listFollower(userId);
     }
-    @GetMapping("/followers/{userId}")
+    @GetMapping("/followings/{userId}")
     public List<UserInfo> listFollowings(@PathVariable("userId") int userId) {
         return followService.listFollowing(userId);
     }
@@ -36,7 +36,7 @@ public class FollowController {
     }
 
     @PostMapping("/unfollow")
-    public Boolean unfollowUser(@RequestBody FollowRequest followRequest) {
-        return followService.unfollowUser(followRequest.getUserId(), followRequest.getFollowerId());
+    public Boolean unfollowUser(@RequestBody FollowRequest unfollowRequest) {
+        return followService.unfollowUser(unfollowRequest.getUserId(), unfollowRequest.getFollowerId());
     }
 }

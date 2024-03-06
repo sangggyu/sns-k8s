@@ -1,8 +1,8 @@
 package com.example.userserver.follow;
 
 public class FollowRequest {
-    private int userId;
-    private int followerId;
+    private final int userId;
+    private final int followerId;
 
     public FollowRequest(int userId, int followerId) {
         this.userId = userId;
