@@ -17,10 +17,12 @@ spec:
     spec:
       containers:
         - name: feed-container
-          image: 0892668/sns-feedserver:0.0.3
+          image: 0892668/sns-feedserver:0.0.4
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: dev
+            - name: USER_SERVICE
+              value: http://user-service.sns.svc.cluster.local:8080
           envFrom:
             - configMapRef:
                 name: mysql-config
