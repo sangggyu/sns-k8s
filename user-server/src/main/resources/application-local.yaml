@@ -1,8 +1,0 @@
-server:
-  shutdown: immediate
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://sns-db.cxw8iew8g6mj.ap-northeast-2.rds.amazonaws.com:3306/sns
-    username: admin
-    password: password!
