@@ -18,12 +18,20 @@ spec:
       labels:
         app: image-server
     spec:
+      volumes:
+        - name: image-volume
+          emptyDir: {}
       containers:
         - name: image
-          image: 0892668/image-server:0.0.1
+          image: 0892668/sns-imageserver:0.0.2
+          volumeMounts:
+            - name: image-volume
+              mountPath: /images
           env:
               - name: SPRING_PROFILES_ACTIVE
                 value: dev
+              - name: IMAGE_PATH
+                value: images
           resources:
             requests:
               memory: "512Mi"
