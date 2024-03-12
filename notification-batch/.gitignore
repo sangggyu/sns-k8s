@@ -5,6 +5,7 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 **/src/main/resources/application-local.yaml
+email-secret.yaml
 
 ### STS ###
 .apt_generated

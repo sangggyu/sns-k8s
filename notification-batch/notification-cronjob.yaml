@@ -16,7 +16,7 @@ spec:
           restartPolicy: Never
           containers:
             - name: notification-container
-              image: 0892668/sns-notificationbatch:0.0.2
+              image: 0892668/sns-notificationbatch:0.0.3
               env:
                 - name: SPRING_PROFILES_ACTIVE
                   value: dev
