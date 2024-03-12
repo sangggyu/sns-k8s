@@ -18,3 +18,4 @@ spring:
         smtp:
           auth: ${SMTP_AUTH}
           starttls.enable: ${SMTP_TLS}
+
