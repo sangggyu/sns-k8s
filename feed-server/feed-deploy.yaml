@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: feed-container
-          image: 0892668/sns-feedserver:0.0.4
+          image: 0892668/sns-feedserver:0.0.5
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: dev
@@ -28,6 +28,10 @@ spec:
                 name: mysql-config
             - secretRef:
                 name: mysql-secret
+            - configMapRef:
+                name: kafka-config
+            - secretRef:
+                name: kafka-secret
           resources:
             requests:
               memory: "512Mi"

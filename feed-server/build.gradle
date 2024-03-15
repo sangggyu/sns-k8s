@@ -19,6 +19,7 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.kafka:spring-kafka'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
@@ -33,7 +34,7 @@ jib {
 	}
 	to {
 		image = "0892668/sns-feedserver"
-		tags = ['latest', '0.0.4']
+		tags = ['latest', '0.0.5']
 	}
 	container {
 		creationTime = "USE_CURRENT_TIMESTAMP"
