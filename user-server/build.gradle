@@ -20,6 +20,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.kafka:spring-kafka'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
@@ -35,7 +36,7 @@ jib {
 	}
 	to {
 		image = "0892668/sns-userserver"
-		tags = ['latest', '0.0.2']
+		tags = ['latest', '0.0.3']
 	}
 	container {
 		creationTime = "USE_CURRENT_TIMESTAMP"
