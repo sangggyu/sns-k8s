@@ -16,16 +16,19 @@ public class SocialFeedService {
 
     private SocialFeedRepository feedRepository;
     private KafkaTemplate<String, String> kafkaTemplate;
-    private ObjectMapper objectMapper = new ObjectMapper();
+    private ObjectMapper objectMapper;
+
+    public SocialFeedService(SocialFeedRepository feedRepository, KafkaTemplate<String, String> kafkaTemplate, ObjectMapper objectMapper) {
+        this.feedRepository = feedRepository;
+        this.kafkaTemplate = kafkaTemplate;
+        this.objectMapper = objectMapper;
+    }
 
     @Value("${sns.user-server}")
     private String userServerUrl;
 
     private RestClient restClient = RestClient.create();
-    public SocialFeedService(SocialFeedRepository feedRepository, KafkaTemplate<String, String> kafkaTemplate) {
-        this.feedRepository = feedRepository;
-        this.kafkaTemplate = kafkaTemplate;
-    }
+
 
     public List<SocialFeed> getAllFeeds() {
         return feedRepository.findAll();

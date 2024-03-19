@@ -34,7 +34,7 @@ jib {
 	}
 	to {
 		image = "0892668/sns-feedserver"
-		tags = ['latest', '0.0.5']
+		tags = ['latest', '0.0.6']
 	}
 	container {
 		creationTime = "USE_CURRENT_TIMESTAMP"
